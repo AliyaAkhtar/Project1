@@ -131,9 +131,8 @@ namespace Project1 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->lbWelcome->Location = System::Drawing::Point(33, 149);
 			this->lbWelcome->Name = L"lbWelcome";
-			this->lbWelcome->Size = System::Drawing::Size(50, 19);
+			this->lbWelcome->Size = System::Drawing::Size(0, 19);
 			this->lbWelcome->TabIndex = 5;
-			this->lbWelcome->Text = L"label3";
 			// 
 			// MainForm
 			// 
