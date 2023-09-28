@@ -39,18 +39,28 @@ namespace Project1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ tbFirstName;
+	private: System::Windows::Forms::Label^ lbl_fst_nm;
+	private: System::Windows::Forms::TextBox^ tb_fst_nm;
+	protected:
 
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ tbLastName;
-	private: System::Windows::Forms::Button^ btnsubmit;
+
+	private: System::Windows::Forms::Label^ lbl_lst_nm;
+	private: System::Windows::Forms::TextBox^ tb_lst_nm;
+
+
+
+
+	private: System::Windows::Forms::Button^ btn_submit;
+
 
 
 	private: System::Windows::Forms::Label^ lbWelcome;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ tb_id;
-	private: System::Windows::Forms::Button^ btnsearch;
+	private: System::Windows::Forms::Label^ lbl_emp_id;
+	private: System::Windows::Forms::TextBox^ tb_emp_id;
+	private: System::Windows::Forms::Button^ btn_search;
+
+
+
 
 	protected:
 
@@ -67,74 +77,74 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->tbFirstName = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->tbLastName = (gcnew System::Windows::Forms::TextBox());
-			this->btnsubmit = (gcnew System::Windows::Forms::Button());
+			this->lbl_fst_nm = (gcnew System::Windows::Forms::Label());
+			this->tb_fst_nm = (gcnew System::Windows::Forms::TextBox());
+			this->lbl_lst_nm = (gcnew System::Windows::Forms::Label());
+			this->tb_lst_nm = (gcnew System::Windows::Forms::TextBox());
+			this->btn_submit = (gcnew System::Windows::Forms::Button());
 			this->lbWelcome = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->tb_id = (gcnew System::Windows::Forms::TextBox());
-			this->btnsearch = (gcnew System::Windows::Forms::Button());
+			this->lbl_emp_id = (gcnew System::Windows::Forms::Label());
+			this->tb_emp_id = (gcnew System::Windows::Forms::TextBox());
+			this->btn_search = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// label1
+			// lbl_fst_nm
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_fst_nm->AutoSize = true;
+			this->lbl_fst_nm->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(30, 78);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(126, 15);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Enter Your First Name";
+			this->lbl_fst_nm->Location = System::Drawing::Point(30, 78);
+			this->lbl_fst_nm->Name = L"lbl_fst_nm";
+			this->lbl_fst_nm->Size = System::Drawing::Size(126, 15);
+			this->lbl_fst_nm->TabIndex = 0;
+			this->lbl_fst_nm->Text = L"Enter Your First Name";
 			// 
-			// tbFirstName
+			// tb_fst_nm
 			// 
-			this->tbFirstName->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->tb_fst_nm->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->tbFirstName->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->tb_fst_nm->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->tbFirstName->Location = System::Drawing::Point(33, 108);
-			this->tbFirstName->Name = L"tbFirstName";
-			this->tbFirstName->Size = System::Drawing::Size(347, 21);
-			this->tbFirstName->TabIndex = 1;
+			this->tb_fst_nm->Location = System::Drawing::Point(33, 108);
+			this->tb_fst_nm->Name = L"tb_fst_nm";
+			this->tb_fst_nm->Size = System::Drawing::Size(347, 21);
+			this->tb_fst_nm->TabIndex = 1;
 			// 
-			// label2
+			// lbl_lst_nm
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_lst_nm->AutoSize = true;
+			this->lbl_lst_nm->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(30, 149);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(123, 15);
-			this->label2->TabIndex = 2;
-			this->label2->Text = L"Enter Your Last Name";
+			this->lbl_lst_nm->Location = System::Drawing::Point(30, 149);
+			this->lbl_lst_nm->Name = L"lbl_lst_nm";
+			this->lbl_lst_nm->Size = System::Drawing::Size(123, 15);
+			this->lbl_lst_nm->TabIndex = 2;
+			this->lbl_lst_nm->Text = L"Enter Your Last Name";
 			// 
-			// tbLastName
+			// tb_lst_nm
 			// 
-			this->tbLastName->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->tb_lst_nm->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->tbLastName->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->tb_lst_nm->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->tbLastName->Location = System::Drawing::Point(33, 171);
-			this->tbLastName->Name = L"tbLastName";
-			this->tbLastName->Size = System::Drawing::Size(347, 21);
-			this->tbLastName->TabIndex = 3;
+			this->tb_lst_nm->Location = System::Drawing::Point(33, 171);
+			this->tb_lst_nm->Name = L"tb_lst_nm";
+			this->tb_lst_nm->Size = System::Drawing::Size(347, 21);
+			this->tb_lst_nm->TabIndex = 3;
 			// 
-			// btnsubmit
+			// btn_submit
 			// 
-			this->btnsubmit->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
+			this->btn_submit->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->btnsubmit->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_submit->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnsubmit->Location = System::Drawing::Point(33, 288);
-			this->btnsubmit->Name = L"btnsubmit";
-			this->btnsubmit->Size = System::Drawing::Size(170, 33);
-			this->btnsubmit->TabIndex = 4;
-			this->btnsubmit->Text = L"Submit";
-			this->btnsubmit->UseVisualStyleBackColor = true;
-			this->btnsubmit->Click += gcnew System::EventHandler(this, &MainForm::btnsubmit_Click);
+			this->btn_submit->Location = System::Drawing::Point(33, 288);
+			this->btn_submit->Name = L"btn_submit";
+			this->btn_submit->Size = System::Drawing::Size(170, 33);
+			this->btn_submit->TabIndex = 4;
+			this->btn_submit->Text = L"Submit";
+			this->btn_submit->UseVisualStyleBackColor = true;
+			this->btn_submit->Click += gcnew System::EventHandler(this, &MainForm::btnsubmit_Click);
 			// 
 			// lbWelcome
 			// 
@@ -146,42 +156,41 @@ namespace Project1 {
 			this->lbWelcome->Size = System::Drawing::Size(0, 19);
 			this->lbWelcome->TabIndex = 5;
 			// 
-			// label3
+			// lbl_emp_id
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_emp_id->AutoSize = true;
+			this->lbl_emp_id->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(30, 24);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(107, 15);
-			this->label3->TabIndex = 6;
-			this->label3->Text = L"Enter Employee ID";
+			this->lbl_emp_id->Location = System::Drawing::Point(30, 24);
+			this->lbl_emp_id->Name = L"lbl_emp_id";
+			this->lbl_emp_id->Size = System::Drawing::Size(107, 15);
+			this->lbl_emp_id->TabIndex = 6;
+			this->lbl_emp_id->Text = L"Enter Employee ID";
 			// 
-			// tb_id
+			// tb_emp_id
 			// 
-			this->tb_id->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->tb_emp_id->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->tb_id->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->tb_emp_id->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->tb_id->Location = System::Drawing::Point(33, 42);
-			this->tb_id->Name = L"tb_id";
-			this->tb_id->Size = System::Drawing::Size(347, 22);
-			this->tb_id->TabIndex = 7;
-			//this->tb_id->TextChanged += gcnew System::EventHandler(this, &MainForm::tb_id_TextChanged);
+			this->tb_emp_id->Location = System::Drawing::Point(33, 42);
+			this->tb_emp_id->Name = L"tb_emp_id";
+			this->tb_emp_id->Size = System::Drawing::Size(347, 22);
+			this->tb_emp_id->TabIndex = 7;
 			// 
-			// btnsearch
+			// btn_search
 			// 
-			this->btnsearch->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
+			this->btn_search->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->btnsearch->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btn_search->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnsearch->Location = System::Drawing::Point(208, 288);
-			this->btnsearch->Name = L"btnsearch";
-			this->btnsearch->Size = System::Drawing::Size(172, 33);
-			this->btnsearch->TabIndex = 8;
-			this->btnsearch->Text = L"Search";
-			this->btnsearch->UseVisualStyleBackColor = true;
-			this->btnsearch->Click += gcnew System::EventHandler(this, &MainForm::btnsearch_Click);
+			this->btn_search->Location = System::Drawing::Point(208, 288);
+			this->btn_search->Name = L"btn_search";
+			this->btn_search->Size = System::Drawing::Size(172, 33);
+			this->btn_search->TabIndex = 8;
+			this->btn_search->Text = L"Search";
+			this->btn_search->UseVisualStyleBackColor = true;
+			this->btn_search->Click += gcnew System::EventHandler(this, &MainForm::btnsearch_Click);
 			// 
 			// MainForm
 			// 
@@ -189,15 +198,15 @@ namespace Project1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlDark;
 			this->ClientSize = System::Drawing::Size(406, 336);
-			this->Controls->Add(this->btnsearch);
-			this->Controls->Add(this->tb_id);
-			this->Controls->Add(this->label3);
+			this->Controls->Add(this->btn_search);
+			this->Controls->Add(this->tb_emp_id);
+			this->Controls->Add(this->lbl_emp_id);
 			this->Controls->Add(this->lbWelcome);
-			this->Controls->Add(this->btnsubmit);
-			this->Controls->Add(this->tbLastName);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->tbFirstName);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->btn_submit);
+			this->Controls->Add(this->tb_lst_nm);
+			this->Controls->Add(this->lbl_lst_nm);
+			this->Controls->Add(this->tb_fst_nm);
+			this->Controls->Add(this->lbl_fst_nm);
 			this->Name = L"MainForm";
 			this->Text = L"WELCOME";
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
@@ -206,10 +215,27 @@ namespace Project1 {
 
 		}
 #pragma endregion
+
+		/*
+		Purpose =
+		Input Arguments = 
+		1 - sender = Object : contains information about user 
+		2 - EventArg = Array : contain
+		Output Arguments = void
+
+		Version = 1.0.0
+		Author =
+		Date Created = 
+		Modifed By = null
+		Modified Date= null
+		
+		
+		
+		*/
 	private: System::Void btnsubmit_Click(System::Object^ sender, System::EventArgs^ e) {
-		int emp_id = System::Convert::ToInt32(tb_id->Text);
-		String^ firstName = this->tbFirstName->Text;
-		String^ lastName = this->tbLastName->Text;
+		int emp_id = System::Convert::ToInt32(tb_emp_id->Text);
+		String^ firstName = this->tb_fst_nm->Text;
+		String^ lastName = this->tb_lst_nm->Text;
 
 		std::ifstream infile("C:/Users/aliya.akhtar/Desktop/employee_data.txt");
 		std::string line;
@@ -263,9 +289,8 @@ namespace Project1 {
 	}
 
 	private: System::Void btnsearch_Click(System::Object^ sender, System::EventArgs^ e) {
-		int emp_id = System::Convert::ToInt32(tb_id->Text);
+		int emp_id = System::Convert::ToInt32(tb_emp_id->Text);
 
-		// Open the file for reading
 		std::ifstream infile("C:/Users/aliya.akhtar/Desktop/employee_data.txt");
 		std::string line;
 
@@ -291,15 +316,15 @@ namespace Project1 {
 						std::string firstName = data.substr(pos1 + 1, pos2 - pos1 - 1);
 						std::string lastName = data.substr(pos2 + 1);
 
-						// Display the found data
+						// Display the data
 						String^ firstNameStr = gcnew String(firstName.c_str());
 						String^ lastNameStr = gcnew String(lastName.c_str());
 
-						tbFirstName->Text = firstNameStr;
-						tbLastName->Text = lastNameStr;
+						tb_fst_nm->Text = firstNameStr;
+						tb_lst_nm->Text = lastNameStr;
 
 						infile.close();
-						return; // Exit the function since we found the record
+						return; 
 					}
 				}
 			}
@@ -307,9 +332,9 @@ namespace Project1 {
 			infile.close();
 		}
 
-		// If the code reaches this point, the record was not found
-		tbFirstName->Text = ""; 
-		tbLastName->Text = "";  
+		// If the record was not found
+		tb_fst_nm->Text = ""; 
+		tb_lst_nm->Text = "";  
 
 		// Show an error message
 		System::Windows::Forms::MessageBox::Show("Record for the entered ID does not exist.");
