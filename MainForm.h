@@ -58,6 +58,9 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^ lbl_emp_id;
 	private: System::Windows::Forms::TextBox^ tb_emp_id;
 	private: System::Windows::Forms::Button^ btn_search;
+	private: System::Windows::Forms::Button^ btn_delete;
+	private: System::Windows::Forms::Button^ btn_update;
+
 
 
 
@@ -68,7 +71,7 @@ namespace Project1 {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -86,6 +89,8 @@ namespace Project1 {
 			this->lbl_emp_id = (gcnew System::Windows::Forms::Label());
 			this->tb_emp_id = (gcnew System::Windows::Forms::TextBox());
 			this->btn_search = (gcnew System::Windows::Forms::Button());
+			this->btn_delete = (gcnew System::Windows::Forms::Button());
+			this->btn_update = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// lbl_fst_nm
@@ -140,7 +145,7 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->btn_submit->Location = System::Drawing::Point(33, 288);
 			this->btn_submit->Name = L"btn_submit";
-			this->btn_submit->Size = System::Drawing::Size(170, 33);
+			this->btn_submit->Size = System::Drawing::Size(170, 36);
 			this->btn_submit->TabIndex = 4;
 			this->btn_submit->Text = L"Submit";
 			this->btn_submit->UseVisualStyleBackColor = true;
@@ -186,11 +191,35 @@ namespace Project1 {
 				static_cast<System::Byte>(0)));
 			this->btn_search->Location = System::Drawing::Point(208, 288);
 			this->btn_search->Name = L"btn_search";
-			this->btn_search->Size = System::Drawing::Size(172, 33);
+			this->btn_search->Size = System::Drawing::Size(172, 36);
 			this->btn_search->TabIndex = 8;
 			this->btn_search->Text = L"Search";
 			this->btn_search->UseVisualStyleBackColor = true;
 			this->btn_search->Click += gcnew System::EventHandler(this, &MainForm::btnsearch_Click);
+			// 
+			// btn_delete
+			// 
+			this->btn_delete->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_delete->Location = System::Drawing::Point(33, 244);
+			this->btn_delete->Name = L"btn_delete";
+			this->btn_delete->Size = System::Drawing::Size(170, 38);
+			this->btn_delete->TabIndex = 9;
+			this->btn_delete->Text = L"Delete";
+			this->btn_delete->UseVisualStyleBackColor = true;
+			this->btn_delete->Click += gcnew System::EventHandler(this, &MainForm::btn_delete_Click);
+			// 
+			// btn_update
+			// 
+			this->btn_update->Font = (gcnew System::Drawing::Font(L"Times New Roman", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_update->Location = System::Drawing::Point(209, 244);
+			this->btn_update->Name = L"btn_update";
+			this->btn_update->Size = System::Drawing::Size(171, 38);
+			this->btn_update->TabIndex = 10;
+			this->btn_update->Text = L"Update";
+			this->btn_update->UseVisualStyleBackColor = true;
+			this->btn_update->Click += gcnew System::EventHandler(this, &MainForm::btn_update_Click);
 			// 
 			// MainForm
 			// 
@@ -198,6 +227,8 @@ namespace Project1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlDark;
 			this->ClientSize = System::Drawing::Size(406, 336);
+			this->Controls->Add(this->btn_update);
+			this->Controls->Add(this->btn_delete);
 			this->Controls->Add(this->btn_search);
 			this->Controls->Add(this->tb_emp_id);
 			this->Controls->Add(this->lbl_emp_id);
@@ -218,26 +249,28 @@ namespace Project1 {
 
 		/*
 		Purpose =
-		Input Arguments = 
-		1 - sender = Object : contains information about user 
+		Input Arguments =
+		1 - sender = Object : contains information about user
 		2 - EventArg = Array : contain
 		Output Arguments = void
 
 		Version = 1.0.0
 		Author =
-		Date Created = 
+		Date Created =
 		Modifed By = null
 		Modified Date= null
-		
-		
-		
+
+
+
 		*/
 	private: System::Void btnsubmit_Click(System::Object^ sender, System::EventArgs^ e) {
 		int emp_id = System::Convert::ToInt32(tb_emp_id->Text);
 		String^ firstName = this->tb_fst_nm->Text;
 		String^ lastName = this->tb_lst_nm->Text;
 
-		std::ifstream infile("C:/Users/aliya.akhtar/Desktop/employee_data.txt");
+		//std::ifstream infile("C:/Users/aliya.akhtar/Desktop/employee_data.txt");
+		std::ifstream infile("C:/Users/Shabana/Desktop/employer_data.txt");
+
 		std::string line;
 		bool idExists = false;
 
@@ -262,7 +295,8 @@ namespace Project1 {
 		}
 		else {
 			// Open the file for appending
-			std::ofstream outfile("C:/Users/aliya.akhtar/Desktop/employee_data.txt", std::ios::app);
+			//std::ofstream outfile("C:/Users/aliya.akhtar/Desktop/employee_data.txt", std::ios::app);
+			std::ofstream outfile("C:/Users/Shabana/Desktop/employer_data.txt", std::ios::app);
 
 			if (outfile.is_open()) {
 				std::string firstNameStr, lastNameStr;
@@ -291,7 +325,9 @@ namespace Project1 {
 	private: System::Void btnsearch_Click(System::Object^ sender, System::EventArgs^ e) {
 		int emp_id = System::Convert::ToInt32(tb_emp_id->Text);
 
-		std::ifstream infile("C:/Users/aliya.akhtar/Desktop/employee_data.txt");
+		//std::ifstream infile("C:/Users/aliya.akhtar/Desktop/employee_data.txt");
+		std::ifstream infile("C:/Users/Shabana/Desktop/employer_data.txt");
+
 		std::string line;
 
 		if (infile.is_open()) {
@@ -324,7 +360,7 @@ namespace Project1 {
 						tb_lst_nm->Text = lastNameStr;
 
 						infile.close();
-						return; 
+						return;
 					}
 				}
 			}
@@ -333,14 +369,154 @@ namespace Project1 {
 		}
 
 		// If the record was not found
-		tb_fst_nm->Text = ""; 
-		tb_lst_nm->Text = "";  
+		tb_fst_nm->Text = "";
+		tb_lst_nm->Text = "";
 
 		// Show an error message
 		System::Windows::Forms::MessageBox::Show("Record for the entered ID does not exist.");
 	}
 
+	private: System::Void btn_delete_Click(System::Object^ sender, System::EventArgs^ e) {
+		int emp_id = System::Convert::ToInt32(tb_emp_id->Text);
 
+		// Read all records from the file into a vector, excluding separating lines
+		std::ifstream infile("C:/Users/Shabana/Desktop/employer_data.txt");
+		std::vector<std::string> records;
+		std::string line;
+
+		if (infile.is_open()) {
+			bool skipNextLine = false;
+
+			while (std::getline(infile, line)) {
+				if (!skipNextLine) {
+					records.push_back(line);
+				}
+
+				// Toggle the skipNextLine flag for the separating line
+				skipNextLine = !skipNextLine;
+
+				if (line.empty()) {
+					// Reset the skipNextLine flag when an empty line is encountered
+					skipNextLine = false;
+				}
+			}
+			infile.close();
+		}
+
+		// Find and remove the record corresponding to the entered ID
+		bool recordFound = false;
+		for (auto it = records.begin(); it != records.end(); ++it) {
+			std::istringstream iss(*it);
+			int id;
+			iss >> id;
+
+			if (id == emp_id) {
+				it = records.erase(it);  // Remove the record
+				recordFound = true;
+				break;
+			}
+		}
+
+		if (recordFound) {
+			std::ofstream outfile("C:/Users/Shabana/Desktop/employer_data.txt");
+
+			if (outfile.is_open()) {
+				bool deleteNextEmptyLine = false;
+
+				for (const std::string& record : records) {
+					if (deleteNextEmptyLine) {
+						deleteNextEmptyLine = false;  // Reset the flag
+					}
+					else {
+						outfile << record << "\n";
+
+						if (record.empty()) {
+							deleteNextEmptyLine = true;  // Set the flag to delete the next empty line
+						}
+					}
+				}
+
+				outfile.close();
+				System::Windows::Forms::MessageBox::Show("Record deleted successfully.");
+			}
+			else {
+				System::Windows::Forms::MessageBox::Show("Error in opening the file for writing.");
+			}
+		}
+
+	};
+	private: System::Void btn_update_Click(System::Object^ sender, System::EventArgs^ e) {
+		int emp_id = System::Convert::ToInt32(tb_emp_id->Text);
+
+		// Read all records from the file into a vector, excluding separating lines
+		std::ifstream infile("C:/Users/Shabana/Desktop/employer_data.txt");
+		std::vector<std::string> records;
+		std::string line;
+
+		if (infile.is_open()) {
+			bool skipNextLine = false;
+
+			while (std::getline(infile, line)) {
+				if (!skipNextLine) {
+					records.push_back(line);
+				}
+
+				// Toggle the skipNextLine flag for the separating line
+				skipNextLine = !skipNextLine;
+
+				if (line.empty()) {
+					// Reset the skipNextLine flag when an empty line is encountered
+					skipNextLine = false;
+				}
+			}
+			infile.close();
+		}
+
+		// Find and update the record corresponding to the entered ID
+		bool recordFound = false;
+		for (auto& record : records) {
+			std::istringstream iss(record);
+			int id;
+			iss >> id;
+
+			if (id == emp_id) {
+				// Update the first name and last name with the new values
+				String^ firstName = tb_fst_nm->Text;
+				String^ lastName = tb_lst_nm->Text;
+
+				std::string firstNameStr, lastNameStr;
+				if (firstName != nullptr)
+					firstNameStr = msclr::interop::marshal_as<std::string>(firstName);
+				if (lastName != nullptr)
+					lastNameStr = msclr::interop::marshal_as<std::string>(lastName);
+
+				// Replace the existing record with the updated one
+				record = std::to_string(emp_id) + " | " + firstNameStr + " | " + lastNameStr;
+				recordFound = true;
+				break;
+			}
+		}
+
+		if (recordFound) {
+			// Write the updated records back to the file, overwriting the old data
+			std::ofstream outfile("C:/Users/Shabana/Desktop/employer_data.txt");
+
+			if (outfile.is_open()) {
+				for (const std::string& record : records) {
+					outfile << record << "\n";
+				}
+
+				outfile.close();
+				System::Windows::Forms::MessageBox::Show("Record updated successfully.");
+			}
+			else {
+				System::Windows::Forms::MessageBox::Show("Error in opening the file for writing.");
+			}
+		}
+		else {
+			System::Windows::Forms::MessageBox::Show("Record for the entered ID does not exist.");
+		}
+	}
 
 };
-}
+};
